@@ -11,7 +11,7 @@ plt.rcParams['axes.unicode_minus'] = False
 
 plt.rcParams['font.sans-serif'] = ['SimHei']
 plt.rcParams['axes.unicode_minus'] = False
-plt.rcParams.update({'font.size': 16}
+plt.rcParams.update({'font.size': 16})
 
 # --- 全局固定参数 ---
 MAX_ERROR = 50
