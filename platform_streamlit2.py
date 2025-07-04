@@ -9,6 +9,10 @@ import time  # 引入time模块用于实现延时
 plt.rcParams['font.sans-serif'] = ['SimHei']
 plt.rcParams['axes.unicode_minus'] = False
 
+plt.rcParams['font.sans-serif'] = ['SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams.update({'font.size': 16}
+
 # --- 全局固定参数 ---
 MAX_ERROR = 50
 SLOPE_THRESHOLD = 2
@@ -259,7 +263,7 @@ else:
 
         # 1. 绘制图表 (这部分是瞬时完成的)
         fig, ax = plt.subplots(figsize=(15, 7))
-        ax.plot(dates, daily_values, 'o-', label='原始数据', color='cornflowerblue', markersize=3, alpha=0.7)
+        ax.plot(dates, daily_values, 'o-', label='original_data', color='cornflowerblue', markersize=3, alpha=0.7)
         segment_point_indices = []
         if segments:
             segment_point_indices.append(segments[0][0])
@@ -270,9 +274,9 @@ else:
         for idx, (start, end) in enumerate(segments):
             seg_dates, seg_values = dates[start:end + 1], daily_values[start:end + 1]
             if anomaly_detected and idx == len(segments) - 1:
-                ax.plot(seg_dates, seg_values, color='orangered', linewidth=3, linestyle='--', label=f'异常段')
+                ax.plot(seg_dates, seg_values, color='orangered', linewidth=3, linestyle='--', label=f'Abnormal_segement')
             else:
-                label = '趋势段' if idx == 0 else "_nolegend_"
+                label = 'Trend_segement' if idx == 0 else "_nolegend_"
                 ax.plot(seg_dates, seg_values, color='red', linewidth=3, label=label)
 
         if segment_point_indices:
@@ -299,8 +303,8 @@ else:
             )
         # --- 【修改结束】 ---
 
-        ax.set_title(f"{line_name} 时间序列分段结果", fontsize=16)
-        ax.set_xlabel("日期", fontsize=12)
+        ax.set_title(f"{line_name} Segement_result", fontsize=16)
+        ax.set_xlabel("date", fontsize=12)
         ax.set_ylabel(line_name, fontsize=12)
         ax.legend()
         ax.grid(True, linestyle='--', alpha=0.6)
