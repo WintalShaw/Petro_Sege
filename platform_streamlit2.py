@@ -281,7 +281,7 @@ else:
 
         if segment_point_indices:
             point_dates, point_values = dates[segment_point_indices], daily_values[segment_point_indices]
-            ax.scatter(point_dates, point_values, color='green', s=100, zorder=5, label='分段点')
+            ax.scatter(point_dates, point_values, color='green', s=100, zorder=5, label='Sege_point')
 
         # --- 【核心修改】在分段点上标注日期 ---
         # 动态计算文本的垂直偏移量，使其能自适应不同数值范围的图表
